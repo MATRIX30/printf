@@ -58,6 +58,15 @@ int _printf(const char *format, ...)
 				case '%':
 					count += _putchar(*format);
 					break;
+				case 'i':
+				case 'd':
+					num = va_arg(args, int);
+					if (num == 0)
+					{
+						return (1);
+					}
+					count = print_int(num, count);
+					break;
 
 				default:
 					count += _putchar('%');
