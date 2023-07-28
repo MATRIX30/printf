@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	char c;
 	char *s;
 	char *null_buffer = "(null)";
-	/*int j = 0;*/
+	int num = 0;
 
 	va_start(args, format);
 	if (format == NULL)

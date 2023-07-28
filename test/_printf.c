@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	char c;
 	char *s;
 	char *null_buffer = "(null)";
-	/*int j = 0;*/
+	int num = 0;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -57,6 +57,15 @@ int _printf(const char *format, ...)
 					break;
 				case '%':
 					count += _putchar(*format);
+					break;
+				case 'i':
+				case 'd':
+					num = va_arg(args, int);
+					if (num == 0)
+					{
+						return (1);
+					}
+					count = print_int(num, count);
 					break;
 
 				default:
